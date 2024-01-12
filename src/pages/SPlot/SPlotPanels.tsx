@@ -1,4 +1,4 @@
-import { SceneGridItem } from "@grafana/scenes";
+import { SceneGridItem} from "@grafana/scenes";
 import { getPanelWithMenu } from "./SPlotPanel";
 
 export function getLayoutChildren(count: number, ncol: number) {

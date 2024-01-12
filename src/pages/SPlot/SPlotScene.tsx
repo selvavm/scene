@@ -1,9 +1,9 @@
-import { EmbeddedScene, SceneApp, SceneAppPage, SceneGridLayout, SceneVariableSet, TextBoxVariable, behaviors } from '@grafana/scenes';
+import { EmbeddedScene, QueryVariable, SceneApp, SceneAppPage, SceneGridLayout, SceneVariableSet, TextBoxVariable, behaviors } from '@grafana/scenes';
 import { DashboardCursorSync } from '@grafana/schema';
 import { getLayoutChildren } from './SPlotPanels';
 import { getEmbeddedSceneDefaults } from './SPlotUtils';
 import { prefixRoute } from '../../utils/utils.routing';
-import { ROUTES } from '../../constants';
+import { DATASOURCE_REF, ROUTES } from '../../constants';
 
 export function getScene() {
   return new SceneApp({
@@ -41,7 +41,6 @@ export function getScene() {
 }
 
 function getVariableChangeBehavior(variableName: string) {
-  debugger;
   return new behaviors.ActWhenVariableChanged({
     variableName,
     onChange: (variable) => {
